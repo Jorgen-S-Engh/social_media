@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="script/script.js"></script>
+    <script defer src="script/script.js"></script>
     <title>Document</title>
 </head>
   <body>
@@ -91,27 +91,28 @@
                   class="row g-3">
                   <div class="input_container d-flex justify-content-around">
                     <div class="col-md-5">
+                      <label class="form-label"
+                        >Email</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control login_email"
+                      />
+                    </div>
+                    <div class="col-md-5">
                         <label class="form-label"
-                          >Name</label
+                          >password</label
                         >
                         <input
                           type="text"
-                          class="form-control login_name"
+                          class="form-control login_password"
                         />
                       </div>
-                      <div class="col-md-5">
-                        <label class="form-label login_email"
-                          >Email</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                        />
-                      </div>
+
                   </div>
                  
                   <div class="col-12">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary login_btn" type="submit">
                       Login
                     </button>
                   </div>
