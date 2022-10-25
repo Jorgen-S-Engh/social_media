@@ -1,11 +1,7 @@
+import { baseUrl } from "./components/baseUrl.mjs";
+import { accessToken } from "./components/localStorage.mjs";
+
 const loginBtn = document.querySelector(".login_btn");
-
-baseUrl = "https://nf-api.onrender.com/api/v1";
-
-user = {
-  email: "jorgen.engh@stud.noroff.no",
-  password: "12345jorgen",
-};
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -26,8 +22,14 @@ loginBtn.addEventListener("click", (e) => {
         },
         body: JSON.stringify(user),
       });
-      console.log(reply);
+
       const results = await reply.json();
+      console.log(reply);
+      if (reply.status === 200) {
+        localStorage.setItem("accessToken", results.accessToken);
+        window.location.href = "feed.html";
+      }
+
       console.log(results);
     } catch (e) {
       console.log(e);
