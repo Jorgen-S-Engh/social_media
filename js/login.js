@@ -8,11 +8,8 @@ const loginBtn = document.querySelector(".login_btn");
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  
   const loginEmail = document.querySelector(".login_email").value;
   const loginPassword = document.querySelector(".login_password").value;
-
-
   const user = {
     email: loginEmail,
     password: loginPassword,

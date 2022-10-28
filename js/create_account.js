@@ -37,8 +37,6 @@ async function createAccount (e){
             localStorage.setItem("email", loginEmail);
             window.location.href = "index.html"
         }
-        
-
     }catch(e){
         console.log(e)
     }
