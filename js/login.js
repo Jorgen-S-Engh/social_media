@@ -1,18 +1,22 @@
 import { baseUrl } from "./components/baseUrl.mjs";
 import { accessToken } from "./components/localStorage.mjs";
 
+const loginEmail = document.querySelector(".login_email").value = localStorage.getItem("email")
+const loginPassword = document.querySelector(".login_password").value = localStorage.getItem("password")
 const loginBtn = document.querySelector(".login_btn");
+
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  
   const loginEmail = document.querySelector(".login_email").value;
   const loginPassword = document.querySelector(".login_password").value;
+
+
   const user = {
     email: loginEmail,
     password: loginPassword,
   };
-  console.log(JSON.stringify(user));
-
   async function login(endpoint) {
     try {
       const reply = await fetch(`${baseUrl}${endpoint}`, {
