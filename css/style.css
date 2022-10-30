@@ -10,4 +10,16 @@
 
 .danger_hidden {
   display: none;
+}
+
+.home_icon {
+  height: 25px;
+  max-width: 25px;
+}
+
+.btn_logout {
+  max-width: 60px;
+  max-height: 30px;
+  position: absolute;
+  top: 25px;
 }/*# sourceMappingURL=style.css.map */

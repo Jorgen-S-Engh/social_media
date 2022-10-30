@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Feed</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/make_posts.js"></script>
+    <script defer src="js/logout.js"></script>
+    <title>FrontFace Feed</title>
 </head>
+
 <body>
-    <a href="index.html">Back to login</a>
-    
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="profile.html" class="nav-link px-2 link-dark">Profile</a></li>
+                <li><a href="profile.html"><img class="home_icon" src="img\home.png" alt=""></a></li>
+            </ul>
+
+            <form action="">
+                <div class="form-group">
+                    <input class="form-control" type="search" placeholder="Search">
+                </div>
+            </form>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2 btn-sm btn_logout">Logout</button>
+
+            </div>
+        </header>
+    </div>
+    <div class="container feed_container">
+        <!-- <div class="card my-3">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <img src="img\home.png" class="card-img-top my-3" alt="...">
+                <hr>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div> -->
+
 </body>
+
 </html>

@@ -5,7 +5,6 @@
 
 }
 
-
 .success_hidden {
     display: none;
 }
@@ -13,3 +12,17 @@
 .danger_hidden {
     display: none;
 }
+
+.home_icon {
+    height: 25px;
+    max-width: 25px;
+}
+
+.btn_logout {
+    max-width: 60px;
+    max-height: 30px;
+    position: absolute;
+    top: 25px;
+}
+
+@media only screen and (min-width: 500px) {}
