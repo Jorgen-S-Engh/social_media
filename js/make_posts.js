@@ -1,7 +1,8 @@
 import { baseUrl } from "./components/baseUrl.mjs";
+import { showComments } from "./js/comments.mjs";
 
 
-const feedContainer = document.querySelector(".feed_container")
+const postInfo = document.querySelector(".post_info")
 const postTitle = document.querySelector(".post_title")
 
 const options = {
@@ -10,20 +11,18 @@ const options = {
     },
 }
 
+console.log(showComments)
+
 async function getPosts (){
     try{
         const respons = await fetch(`${baseUrl}/social/posts`, options)
         const data = await respons.json();
-        console.log(data)
+
 
         for (let i = 0; i < data.length; i++){
-            console.log(data[i].title)
             const updated = data[i].updated
             const updatedShort = updated.slice(0,10)
-            console.log(updated)
-            console.log(updatedShort)
-
-            feedContainer.innerHTML += `
+            postInfo.innerHTML += `
                                         <div class="container">
                                             <div class="card my-3">
                                                 <div class="card-body">
@@ -35,16 +34,10 @@ async function getPosts (){
                                                 </div>
                                             </div>
                                         </div>`
-
-
         }
-
-
-
     }catch(e){
         console.log(e)
     }
-
 }
 
 getPosts();
