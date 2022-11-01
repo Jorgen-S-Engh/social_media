@@ -27,6 +27,9 @@ loginBtn.addEventListener("click", (e) => {
       const results = await reply.json();
       console.log(reply);
       if (reply.status === 200) {
+        localStorage.setItem("name", results.name);
+        localStorage.setItem("email", results.email);
+        localStorage.setItem("avatar", results.avatar);
         localStorage.setItem("accessToken", results.accessToken);
         window.location.href = "feed.html";
       }

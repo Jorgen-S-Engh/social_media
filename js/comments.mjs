@@ -23,6 +23,7 @@ async function getComments () {
         const data = await response.json();
         // console.log(data);
         const comment = [];
+        // return commentsData
         for (let i = 0; i < data.length; i++){
             // console.log(data[i].comments)
             for (let j = 0; j < data[i].comments.length; j++){
@@ -30,7 +31,7 @@ async function getComments () {
 
                 // console.log(data[i].comments[j].body)
                 // showComments(data[i].comments[j].body)
-                comment.push(data[i].comments[j].body);
+                // comment.push(data[i].comments[j].body);
                 
             }
         } 

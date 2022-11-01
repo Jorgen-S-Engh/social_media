@@ -5,10 +5,10 @@ import { getComments } from "./comments.mjs";
 const postInfo = document.querySelector(".post_info");
 const postTitle = document.querySelector(".post_title");
 
-(async()=>{
-    const comments = await getComments();
-    console.log(comments);
-})();
+// (async()=>{
+//     const comments = await getComments();
+//     console.log(comments);
+// })();
 
 
 
@@ -16,17 +16,22 @@ const options = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     },
-}
+};
 
-// console.log(showComments)
+// (async () => {
+//     const data = await getComments();
+//     console.log(data)
+// })();
+
+
+
 
 async function getPosts (){
     try{
         const respons = await fetch(`${baseUrl}/social/posts`, options)
         const data = await respons.json();
-
-
         for (let i = 0; i < data.length; i++){
+
             const updated = data[i].updated
             const updatedShort = updated.slice(0,10)
             postInfo.innerHTML += `
@@ -48,3 +53,8 @@ async function getPosts (){
 }
 
 getPosts();
+
+async function getAvatar() =>{
+    
+
+}
