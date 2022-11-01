@@ -21,14 +21,21 @@ async function getComments () {
     try{
         const response = await fetch (`${baseUrl}${endpoint}`, options )
         const data = await response.json();
+        // console.log(data);
+        const comment = [];
         for (let i = 0; i < data.length; i++){
             // console.log(data[i].comments)
             for (let j = 0; j < data[i].comments.length; j++){
+                
 
-                showComments(data[i].comments[j].body)
+                // console.log(data[i].comments[j].body)
+                // showComments(data[i].comments[j].body)
+                comment.push(data[i].comments[j].body);
                 
             }
-        }    
+        } 
+        console.log(comment) 
+        return comment;  
     }
     
     catch(e){
@@ -36,12 +43,14 @@ async function getComments () {
     }   
 }
 
+export {getComments};
+// getComments();
 
-getComments();
+// export async function showComments(comments){
 
-export async function showComments(comments){
+//     // console.log(comments)
 
-    console.log(comments)
+// }
 
-}
+
 

@@ -1,9 +1,16 @@
 import { baseUrl } from "./components/baseUrl.mjs";
-import { showComments } from "./js/comments.mjs";
+import { getComments } from "./comments.mjs";
 
 
-const postInfo = document.querySelector(".post_info")
-const postTitle = document.querySelector(".post_title")
+const postInfo = document.querySelector(".post_info");
+const postTitle = document.querySelector(".post_title");
+
+(async()=>{
+    const comments = await getComments();
+    console.log(comments);
+})();
+
+
 
 const options = {
     headers: {
@@ -11,7 +18,7 @@ const options = {
     },
 }
 
-console.log(showComments)
+// console.log(showComments)
 
 async function getPosts (){
     try{
